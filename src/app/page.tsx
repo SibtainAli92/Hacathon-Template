@@ -1,101 +1,86 @@
 import Image from "next/image";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div>
+      <Navbar />
+      {/* First page start */}
+      <div className="h-screen flex justify-center items-center bg-[url('/Rectangle.png')] bg-cover">
+        <div className="flex w-11/12 h-[465px] flex-col md:flex-row">
+          <div className="flex flex-col flex-1 gap-4 justify-center px-4">
+            <h1 className="font-extrabold text-4xl md:text-[70px] relative inline-block w-full md:w-[670px] h-auto">
+              FIND CLOTHES THAT MATCHES YOUR STYLE
+            </h1>
+            <p className="font-normal text-base md:text-[18px] relative inline-block w-full md:w-[600px]">
+              Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.
+            </p>
+            <button className="text-white w-[237px] h-[66px] rounded-full bg-black p-4">
+              Shop Now
+            </button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+
+        <div className="absolute top-2 right-4 w-[700px] flex justify-between">
+          <Image 
+            src="/Vector.png" 
+            alt="vector"
+            width={104}
+            height={104}
+            className="absolute top-2 right-2"
+          /> 
+          <Image 
+            src="/Vector (1).png" 
+            alt="vector"
+            width={56}
+            height={56}
+            className="absolute left-2 top-96"
+          />         
+        </div>
+      </div>
+      {/* First page end */}
+
+      {/* Second page start */}
+      <div className="bg-black sm:w-auto h-auto flex items-center justify-center">
+        <div className="flex flex-wrap justify-center gap-10"> 
+          <Image 
+            src="/versace.png" 
+            alt="versace"
+            width={166}
+            height={33}
+            className="text-lg hover:cursor-pointer"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+          <Image 
+            src="/zara.png" 
+            alt="zara"
+            width={91}
+            height={38}
+            className="text-lg hover:cursor-pointer"
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+          <Image 
+            src="/gucci.png" 
+            alt="gucci"
+            width={156}
+            height={36}
+            className="text-lg hover:cursor-pointer"
           />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          <Image 
+            src="/prada.png" 
+            alt="prada"
+            width={194}
+            height={32}
+            className="text-lg hover:cursor-pointer"
+          />
+          <Image 
+            src="/calvin.png" 
+            alt="calvin"
+            width={206}
+            height={33}
+            className="text-lg hover:cursor-pointer"
+          />
+        </div>
+      </div>
+      {/* Second page end */}
     </div>
   );
 }
