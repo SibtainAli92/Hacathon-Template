@@ -3,7 +3,8 @@ import { RxCross1 } from "react-icons/rx";
 
 export default function Header() {
     return (
-        <div className="bg-black text-gray-200 p-4">
+    <div className="bg-black">
+        <div className="text-gray-200 p-4 max-w-[1440px] mx-auto">
             <div className="mx-auto flex flex-col md:flex-row justify-between items-center text-center">
                 {/* Left Section: Text and Link */}
                 <div className="flex flex-col md:flex-row items-center">
@@ -26,5 +27,6 @@ export default function Header() {
                 </div>
             </div>
         </div>
+    </div>
     );
 }
