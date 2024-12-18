@@ -1,14 +1,8 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
-
-};
-module.exports = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   reactStrictMode: true,
-};
-module.exports = {
-  distDir: 'build', // You can change 'build' to any other directory name if desired
+  distDir: 'build', // Custom build directory (optional)
+  // Add other configuration options here as needed
 };
 
-export default nextConfig;
+module.exports = nextConfig;
