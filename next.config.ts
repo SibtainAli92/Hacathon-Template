@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
 
 };
 module.exports = {
+  reactStrictMode: true,
+};
+module.exports = {
   distDir: 'build', // You can change 'build' to any other directory name if desired
 };
 
