@@ -234,7 +234,7 @@ export default function Home() {
             height={22}
             />      
             <span className="flex gap-2"> <p>Sarah M.</p> <Image src="/tick.png" alt="tick" width={24} height={24}/></span>
-            <p>"I'm blown away by the quality and style of the clothes. I received from Shop.co. From casual wear to elegant dress, every pice I've bought has exceded my expectstions."</p>
+            <p>&quot;I&apos;m blown away by the quality and style of the clothes. I received from Shop.co. From casual wear to elegant dress, every pice I&apos;ve bought has exceded my expectstions.&quot;</p>
       </div>    
 
       <div className="mt-10 space-y-5 max-w-[400px] h-[239px] bg-[#F0F0F0] p-7 mx-auto rounded-3xl flex flex-col ">
@@ -245,7 +245,7 @@ export default function Home() {
             height={22}
             />      
             <span className="flex gap-2"> <p>Alex k.</p> <Image src="/tick.png" alt="tick" width={24} height={24}/></span>
-            <p>"Finding clothes that align with my personal style used to be a challenge until I discovered Shop.co. The range of options they offer is turly remarkable, catering to a variety of tastes and occasions."</p>
+            <p>&quot;Finding clothes that align with my personal style used to be a challenge until I discovered Shop.co. The range of options they offer is turly remarkable, catering to a variety of tastes and occasions.&quot;</p>
       </div>    
 
       <div className="mt-10 space-y-5 max-w-[400px] h-[239px] bg-[#F0F0F0] p-7 mx-auto rounded-3xl flex flex-col ">
@@ -256,7 +256,7 @@ export default function Home() {
             height={22}
             />      
             <span className="flex gap-2"> <p>James L.</p> <Image src="/tick.png" alt="tick" width={24} height={24}/></span>
-            <p>"As someone who's always on the lookout for unique fashion pieces, I'm thriled to have stumbled upon Shop.co. The selection of clothes is not only disverse but also on-point with the latest trends."</p>
+            <p>&quot;As someone who is always on the lookout for unique fashion pieces, I am thriled to have stumbled upon Shop.co. The selection of clothes is not only disverse but also on point with the latest trends.&quot;</p>
       </div>    
 
       </div>
