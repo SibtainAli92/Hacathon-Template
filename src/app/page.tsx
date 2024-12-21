@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import ClothesCard from "@/components/Shart_Card_01";
+import { GoArrowLeft } from "react-icons/go";
+import { GoArrowRight } from "react-icons/go";
+
 
 export default function Home() {
   return (
@@ -212,6 +215,75 @@ export default function Home() {
   </div>
 </div>
       {/* fifth page end */}
+
+      {/* Sixth page start */}
+      <div>
+        <h1 className="text-4xl font-extrabold text-center mt-28 flex ml-16">OUR HAPPY CUSTOMERS</h1>
+        <div className="flex justify-end mr-20 -mt-8">
+        <GoArrowLeft className="h-[30px] w-[30px] "/> 
+        <GoArrowRight className="h-[30px] w-[30px] "/>
+        </div> 
+
+      <div className="flex p-10">
+
+      <div className="mt-10 space-y-5 max-w-[400px] h-[239px] bg-[#F0F0F0] p-7 mx-auto rounded-3xl flex flex-col ">
+          <Image 
+            src="/stars.png" 
+            alt="star"
+            width={138}
+            height={22}
+            />      
+            <span className="flex gap-2"> <p>Sarah M.</p> <Image src="/tick.png" alt="tick" width={24} height={24}/></span>
+            <p>"I'm blown away by the quality and style of the clothes. I received from Shop.co. From casual wear to elegant dress, every pice I've bought has exceded my expectstions."</p>
+      </div>    
+
+      <div className="mt-10 space-y-5 max-w-[400px] h-[239px] bg-[#F0F0F0] p-7 mx-auto rounded-3xl flex flex-col ">
+          <Image 
+            src="/stars.png" 
+            alt="star"
+            width={138}
+            height={22}
+            />      
+            <span className="flex gap-2"> <p>Alex k.</p> <Image src="/tick.png" alt="tick" width={24} height={24}/></span>
+            <p>"Finding clothes that align with my personal style used to be a challenge until I discovered Shop.co. The range of options they offer is turly remarkable, catering to a variety of tastes and occasions."</p>
+      </div>    
+
+      <div className="mt-10 space-y-5 max-w-[400px] h-[239px] bg-[#F0F0F0] p-7 mx-auto rounded-3xl flex flex-col ">
+          <Image 
+            src="/stars.png" 
+            alt="star"
+            width={138}
+            height={22}
+            />      
+            <span className="flex gap-2"> <p>James L.</p> <Image src="/tick.png" alt="tick" width={24} height={24}/></span>
+            <p>"As someone who's always on the lookout for unique fashion pieces, I'm thriled to have stumbled upon Shop.co. The selection of clothes is not only disverse but also on-point with the latest trends."</p>
+      </div>    
+
+      </div>
+
+
+      </div>
+      {/* Sixth page end */}
+
+      {/* Seventh page start */}
+      <div className="bg-black text-white p-6 w-[1100px] flex-col items-center rounded-md flex justify-center">
+      <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 w-[1240px] h-[180px]">
+        <h2 className="text-4xl font-extrabold text-start md:text-left">
+          STAY UP TO DATE ABOUT OUR LATEST OFFERS
+        </h2>
+        <div className="flex flex-col gap-4 items-center md:w-auto space-x-2 ">
+          <input
+            type="email"
+            placeholder="Enter your email address"
+            className="flex-1 px-4 py-2 rounded-full text-center focus:outline-none w-[349px] h-[48px]"
+          />
+          <button className="bg-white text-black px-4 py-2 rounded-full  font-medium w-[349px] h-[48px]">
+            Subscribe to Newsletter
+          </button>
+        </div>
+      </div>
+    </div>
+      {/* Seventh page end */}
     </div>
   );
 }
