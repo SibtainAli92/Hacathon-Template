@@ -309,7 +309,7 @@ export default function Home() {
     <div>
       <h2 className="text-xl font-bold">SHOP.CO</h2>
       <p className="mt-4 text-sm">
-        We have clothes that suit your style and which you&apos;re proud to wear. From women to men.
+        We have clothes that suit your style and which you&#39;re proud to wear. From women to men.
       </p>
       <div className="flex space-x-4 mt-6">
         <Link href="">
@@ -386,6 +386,7 @@ export default function Home() {
     </div>
   </div>
 </div>
+
 
       {/* Eight page end */}
     </div>
