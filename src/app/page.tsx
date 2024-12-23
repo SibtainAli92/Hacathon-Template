@@ -309,7 +309,7 @@ export default function Home() {
     <div>
       <h2 className="text-xl font-bold">SHOP.CO</h2>
       <p className="mt-4 text-sm">
-        We have clothes that suit your style and which you&#39;re proud to wear. From women to men.
+        We have clothes that suit your style and which you&apos;re proud to wear. From women to men.
       </p>
       <div className="flex space-x-4 mt-6">
         <Link href="">
@@ -344,7 +344,7 @@ export default function Home() {
       <ul className="mt-4 space-y-2 text-sm">
         <li><a href="#" className="hover:underline">Customer Support</a></li>
         <li><a href="#" className="hover:underline">Delivery Details</a></li>
-        <li><a href="#" className="hover:underline">Terms & Conditions</a></li>
+        <li><a href="#" className="hover:underline">Terms &amp; Conditions</a></li>
         <li><a href="#" className="hover:underline">Privacy Policy</a></li>
       </ul>
     </div>
@@ -386,6 +386,7 @@ export default function Home() {
     </div>
   </div>
 </div>
+
 
 
       {/* Eight page end */}
