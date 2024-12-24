@@ -1,6 +1,4 @@
 import Image from "next/image";
-import Navbar from "@/components/Navbar";
-import Link from "next/link";
 import ClothesCard from "@/components/Shart_Card_01";
 import { GoArrowLeft } from "react-icons/go";
 import { GoArrowRight } from "react-icons/go";
@@ -8,94 +6,99 @@ import { GoArrowRight } from "react-icons/go";
 
 export default function Home() {
   return (
-    <div>
-      <Navbar />
+    <div className="max-w-[1440px] mx-auto">
       {/* First page start */}
-      <div className="h-screen flex justify-center items-center bg-[url('/Rectangle.png')] bg-cover mx-auto">
-  <div className="flex w-full h-[465px] flex-col md:flex-row">
-    <div className="flex flex-col flex-1 gap-4 justify-center px-4">
-      <h1 className="font-extrabold text-6xl md:text-[70px] relative inline-block w-full md:w-[670px] h-auto">
-        FIND CLOTHES <br />THAT MATCHES <br />YOUR STYLE
-      </h1>
-      <p className="font-normal text-base md:text-[18px] relative inline-block w-full md:w-[600px]">
-        Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.
-      </p>
-      <button className="text-white w-[237px] h-[66px] rounded-full bg-black p-4">
-        Shop Now
-      </button>
-    </div>
+<div className="h-screen flex flex-col justify-center items-center bg-[url('/Rectangle.png')] bg-cover px-4 md:px-8">
+  {/* Text Content */}
+  <div className="w-full max-w-4xl flex flex-col md:text-left md:items-start space-y-6">
+    <h1 className="font-extrabold text-3xl sm:text-4xl lg:text-6xl leading-tight">
+      FIND CLOTHES <br /> THAT MATCHES <br /> YOUR STYLE
+    </h1>
+    <p className="font-normal text-sm sm:text-base lg:text-lg lg:max-w-[600px]">
+      Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.
+    </p>
+    <button className="text-white w-[160px] sm:w-[200px] lg:w-[237px] h-[45px] sm:h-[50px] lg:h-[66px] rounded-full bg-black p-3 lg:p-4">
+      Shop Now
+    </button>
   </div>
 
-  <div className="absolute top-2 right-4 w-[700px] mt-52 flex justify-between">
-    <Image 
-      src="/Vector.png" 
-      alt="vector"
-      width={104}
-      height={104}
-      className="absolute top-2 right-2"
-    /> 
+  {/* Decorative Images */}
+  <div className="relative flex flex-col items-center md:items-end w-full mt-8 md:mt-0 mx-auto">
+    <div className="absolute top-0 right-4 w-10 h-10 sm:w-[104px] sm:h-[104px]">
+      <Image 
+        src="/Vector.png" 
+        alt="vector"
+        width={104}
+        height={104}
+        className="object-contain"
+      />
     </div>
-    <div className="absolute top-2 right-4 w-[700px] mt-28 flex justify-between">
-    <Image 
-      src="/Vector (1).png" 
-      alt="vector"
-      width={56}
-      height={56}
-      className="absolute left-2 top-96"
-    />         
+    <div className="absolute top-16 sm:top-28 right-4 w-6 h-6 sm:w-[56px] sm:h-[56px]">
+      <Image 
+        src="/Vector (1).png" 
+        alt="vector"
+        width={56}
+        height={56}
+        className="object-contain"
+      />
+    </div>
   </div>
 </div>
-      {/* First page end */}
 
-      {/* Second page start */}
-      <div className="bg-black w-full h-32 flex items-center justify-center">
-  <div className="flex flex-wrap justify-center gap-24"> 
+{/* First page end */}
+
+{/* Second page start */}
+<div className="bg-black mx-w-[1440px] py-4 sm:py-8 flex items-center justify-center mx-auto">
+  <div className="flex flex-wrap justify-center gap-8 sm:gap-16 lg:gap-24">
     <Image 
       src="/versace.png" 
       alt="versace"
-      width={166}
-      height={33}
-      className="text-lg hover:cursor-pointer"
+      width={120}
+      height={25}
+      className="hover:cursor-pointer"
     />
     <Image 
       src="/zara.png" 
       alt="zara"
-      width={91}
-      height={38}
-      className="text-lg hover:cursor-pointer"
+      width={70}
+      height={30}
+      className="hover:cursor-pointer"
     />
     <Image 
       src="/gucci.png" 
       alt="gucci"
-      width={156}
-      height={36}
-      className="text-lg hover:cursor-pointer"
+      width={110}
+      height={30}
+      className="hover:cursor-pointer"
     />
     <Image 
       src="/prada.png" 
       alt="prada"
-      width={194}
-      height={32}
-      className="text-lg hover:cursor-pointer"
+      width={140}
+      height={30}
+      className="hover:cursor-pointer"
     />
     <Image 
       src="/calvin.png" 
       alt="calvin"
-      width={206}
-      height={33}
-      className="text-lg hover:cursor-pointer"
+      width={150}
+      height={30}
+      className="hover:cursor-pointer"
     />
   </div>
 </div>
+{/* Second page end */}
+
       {/* Second page end */}
 
       {/* third page start */}
-      <div className="h-[938px] flex flex-col justify-center -mt-10">
-  <h1 className="lg:text-6xl text-4xl text-center font-extrabold mb-4">
+    {/* New Arrival Section */}
+<div className="h-auto flex flex-col justify-center mt-10 px-4 md:px-8">
+  <h1 className="text-3xl sm:text-4xl lg:text-6xl text-center font-extrabold mb-8">
     NEW ARRIVAL
   </h1>
 
-  <div className="flex flex-col md:flex-row justify-center gap-7">
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
     <ClothesCard
       image="/black.png"
       name="T-shirt with Tape Details"
@@ -126,21 +129,21 @@ export default function Home() {
     />
   </div>
 
-  <button className="text-black w-[237px] h-[66px] rounded-full bg-white p-4 flex justify-center mx-auto border mt-10">
+  <button className="text-black w-40 sm:w-56 lg:w-[237px] h-12 sm:h-14 lg:h-[66px] rounded-full bg-white p-4 flex justify-center mx-auto border mt-8">
     View All
   </button>
 </div>
-      {/* third page end */}
 
-      <hr />
+{/* Divider */}
+<hr className="my-12" />
 
-      {/* fourth page start */}
-      <div className="h-[938px] flex flex-col justify-center -mt-10">
-  <h1 className="lg:text-6xl text-4xl text-center font-extrabold mb-4">
+{/* Top Selling Section */}
+<div className="h-auto flex flex-col justify-center px-4 md:px-8">
+  <h1 className="text-3xl sm:text-4xl lg:text-6xl text-center font-extrabold mb-8">
     TOP SELLING
   </h1>
 
-  <div className="flex flex-col md:flex-row justify-center gap-7">
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
     <ClothesCard
       image="/green.png"
       name="Vertical Striped Shirt"
@@ -169,10 +172,11 @@ export default function Home() {
     />
   </div>
 
-  <button className="text-black w-[237px] h-[66px] rounded-full bg-white p-4 flex justify-center mx-auto border mt-10">
+  <button className="text-black w-40 sm:w-56 lg:w-[237px] h-12 sm:h-14 lg:h-[66px] rounded-full bg-white p-4 flex justify-center mx-auto border mt-8">
     View All
   </button>
 </div>
+
       {/* fourth page end */}
 
       {/* fifth page start */}
@@ -286,7 +290,7 @@ export default function Home() {
     </h2>
 
     {/* Input and Button */}
-    <div className="flex flex-col md:flex-row items-center gap-4 md:gap-2 w-full md:w-auto">
+    <div className="flex flex-col md:flex-row items-center gap-4 md:gap-2 w-full h-[180px] md:w-auto">
       <input
         type="email"
         placeholder="Enter your email address"
@@ -301,95 +305,7 @@ export default function Home() {
 
       {/* Seventh page end */}
 
-      {/* Eight page start */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  {/* Grid Container */}
-  <div className="py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[248px_104px_136px_149px_149px] gap-y-10 lg:gap-28">
-    {/* Left Section */}
-    <div>
-      <h2 className="text-xl font-bold">SHOP.CO</h2>
-      <p className="mt-4 text-sm">
-        We have clothes that suit your style and which you&apos;re proud to wear. From women to men.
-      </p>
-      <div className="flex space-x-4 mt-6">
-        <Link href="">
-          <Image src="/twitter.png" alt="twitter" width={28} height={28} />
-        </Link>
-        <Link href="https://www.facebook.com/login.php/">
-          <Image src="/facebook.png" alt="facebook" width={28} height={28} />
-        </Link>
-        <Link href="https://www.instagram.com/accounts/login/?hl=en">
-          <Image src="/instagram.png" alt="instagram" width={28} height={28} />
-        </Link>
-        <Link href="https://github.com/login">
-          <Image src="/github.png" alt="github" width={28} height={28} />
-        </Link>
-      </div>
-    </div>
-
-    {/* Company Section */}
-    <div>
-      <h3 className="text-lg font-semibold">COMPANY</h3>
-      <ul className="mt-4 space-y-2 text-sm">
-        <li><a href="#" className="hover:underline">About</a></li>
-        <li><a href="#" className="hover:underline">Features</a></li>
-        <li><a href="#" className="hover:underline">Works</a></li>
-        <li><a href="#" className="hover:underline">Career</a></li>
-      </ul>
-    </div>
-
-    {/* Help Section */}
-    <div>
-      <h3 className="text-lg font-semibold">HELP</h3>
-      <ul className="mt-4 space-y-2 text-sm">
-        <li><a href="#" className="hover:underline">Customer Support</a></li>
-        <li><a href="#" className="hover:underline">Delivery Details</a></li>
-        <li><a href="#" className="hover:underline">Terms &amp; Conditions</a></li>
-        <li><a href="#" className="hover:underline">Privacy Policy</a></li>
-      </ul>
-    </div>
-
-    {/* FAQ Section */}
-    <div>
-      <h3 className="text-lg font-semibold">FAQ</h3>
-      <ul className="mt-4 space-y-2 text-sm">
-        <li><a href="#" className="hover:underline">Account</a></li>
-        <li><a href="#" className="hover:underline">Manage Deliveries</a></li>
-        <li><a href="#" className="hover:underline">Orders</a></li>
-        <li><a href="#" className="hover:underline">Payments</a></li>
-      </ul>
-    </div>
-
-    {/* Resources Section */}
-    <div>
-      <h3 className="text-lg font-semibold">RESOURCES</h3>
-      <ul className="mt-4 space-y-2 text-sm">
-        <li><a href="#" className="hover:underline">Free Books</a></li>
-        <li><a href="#" className="hover:underline">Development Tutorial</a></li>
-        <li><a href="#" className="hover:underline">How to - Blog</a></li>
-        <li><a href="#" className="hover:underline">Youtube Playlist</a></li>
-      </ul>
-    </div>
-  </div>
-
-  {/* Footer Bottom Section */}
-  <div className="border-t border-gray-200 pt-8 pb-4 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-    <p className="text-sm text-gray-600 text-center md:text-left">
-      Shop.co © 2000-2023, All Rights Reserved
-    </p>
-    <div className="flex gap-2 flex-wrap justify-center md:justify-start">
-      <Image src="/visa.png" alt="Visa" width={66} height={40} />
-      <Image src="/master-card.png" alt="MasterCard" width={66} height={40} />
-      <Image src="/paypal.png" alt="PayPal" width={66} height={40} />
-      <Image src="/apple-pay.png" alt="Apple Pay" width={66} height={40} />
-      <Image src="/google-pay.png" alt="Google Pay" width={66} height={40} />
-    </div>
-  </div>
-</div>
-
-
-
-      {/* Eight page end */}
+     
     </div>
   );
 }
