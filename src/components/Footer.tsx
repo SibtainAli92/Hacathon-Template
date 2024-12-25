@@ -3,9 +3,9 @@ import Image from "next/image"
  
 export default function Footer(){
     return (
- <div className="mx-auto px-4 sm:px-6 lg:px-8">
+ <div className="mx-auto px-4 sm:px-6 w-fit lg:px-8">
  {/* Grid Container */}
- <div className="py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[248px_104px_136px_149px_149px] gap-y-10 lg:gap-28">
+ <div className="py-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[248px_104px_136px_149px_149px] gap-y-10 lg:gap-28">
    {/* Left Section */}
    <div>
      <h2 className="text-xl font-bold">SHOP.CO</h2>
