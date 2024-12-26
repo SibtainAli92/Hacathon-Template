@@ -23,7 +23,7 @@ export default function Navbar() {
         </button>
 
         {/* Logo */}
-        <h1 className="text-xl md:text-2xl font-extrabold font-Poppins">
+        <h1 className="text-xl md:text-4xl font-extrabold font-Poppins">
           SHOP.CO
         </h1>
 
@@ -36,7 +36,7 @@ export default function Navbar() {
           <Link href="/" className="text-lg hover:text-[#504f4d] hover:underline">
             Shop
           </Link>
-          <Link href="/about" className="text-lg hover:text-[#504f4d] hover:underline">
+          <Link href="/product_detial" className="text-lg hover:text-[#504f4d] hover:underline">
             On Sale
           </Link>
           <Link href="/project" className="text-lg hover:text-[#504f4d] hover:underline">
@@ -83,7 +83,7 @@ export default function Navbar() {
           <Link href="/" className="text-black">
             Shop
           </Link>
-          <Link href="/about" className="text-black">
+          <Link href="/product_detial" className="text-black">
             On Sale
           </Link>
           <Link href="/project" className="text-black">
