@@ -29,7 +29,7 @@ export default function Navbar() {
 
         {/* Navigation Links */}
         <nav
-          className={`hidden md:flex space-x-8 ${
+          className={`hidden md:flex space-x-2 ${
             menuOpen ? "flex" : "hidden"
           } md:space-x-8`}
         >
@@ -48,9 +48,9 @@ export default function Navbar() {
         </nav>
 
         {/* Search Bar */}
-        <div className="flex items-center w-full max-w-[400px]">
+        <div className="flex items-center w-fit max-w-[400px]">
           {/* Full search bar for medium+ screens */}
-          <div className="hidden md:flex items-center h-10 bg-[#F5F5F5] rounded-full overflow-hidden w-full">
+          <div className="hidden lg:flex items-center h-10 bg-[#F5F5F5] rounded-full overflow-hidden w-64 xl:w-full">
             <label htmlFor="Search-bar" className="flex items-center w-full">
               <BsSearch className="text-2xl ml-4" />
               <input
@@ -62,7 +62,7 @@ export default function Navbar() {
             </label>
           </div>
           {/* Search icon for small screens */}
-          <button className="flex md:hidden items-center justify-center w-10 h-10 text-black bg-gray-200 rounded-full hover:bg-gray-300">
+          <button className="flex lg:hidden ml-24 items-center justify-center w-10 h-10 text-black bg-gray-200 rounded-full hover:bg-gray-300">
             <BsSearch className="text-xl" />
           </button>
         </div>
