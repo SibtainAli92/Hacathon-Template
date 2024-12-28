@@ -325,7 +325,7 @@ export default function Product(){
                   price="$180"
                 />
                 <ClothesCard
-                  image="/.png"
+                  image="/white.png"
                   name="Black Striped T-Shirt"
                   ratingImage="/5.0.png"
                   price="$210"
