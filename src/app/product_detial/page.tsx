@@ -1,6 +1,7 @@
 "use client"
 import Image from "next/image"
 import Link from "next/link"
+import ClothesCard from "@/components/Shart_Card_01";
 import { useState } from "react";
 
 
@@ -157,9 +158,8 @@ export default function Product(){
               </div>
             </div>
             <hr />
-
-            {/* Choose size */}
-            <div className="h-[63px] flex flex-col gap-3 justify-between mt-3">
+{/* Choose size */}
+<div className="h-[63px] flex flex-col gap-3 justify-between mt-3">
               <p className="font-normal font-poppins text-gray-700 text-sm/[21px]">
                 Choose Size
               </p>
@@ -225,7 +225,7 @@ export default function Product(){
       <div className="p-6 md:p-12 bg-gray-100 min-h-screen">
       <div className="max-w-6xl mx-auto">
         {/* Tabs Section */}
-        <div className="flex justify-center gap-52 text-2xl font-[Satoshi] space-x-6 text-gray-500 border-b">
+        <div className="flex justify-center text-2xl font-[Satoshi] space-x-6 text-gray-500 border-b">
           <button className="pb-2 border-b-2 border-transparent hover:border-black text-black">
             Product Details
           </button>
@@ -254,6 +254,10 @@ export default function Product(){
             </button>
           </div>
         </div>
+
+
+
+
 
         {/* Reviews Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
@@ -294,6 +298,49 @@ export default function Product(){
       {/* Second page end */}
 
       {/* third page start */}
+      <div className="h-auto flex flex-col justify-center px-4 md:px-8">
+              <h1 className="text-3xl sm:text-4xl lg:text-6xl text-center font-extrabold mb-8">
+              YOU MIGHT ALSO LIKE
+              </h1>
+      
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <ClothesCard
+                  image="/blue.png"
+                  name="Polo With Contrast Trims"
+                  ratingImage="/4.0.png"
+                  price="$212"
+                  orignalPrice="$242"
+                  discountCopen="-20%"
+                />
+                <ClothesCard
+                  image="/pink.png"
+                  name="Gradient Graphic T-Shirt"
+                  ratingImage="/3.5.png"
+                  price="$145"
+                />
+                <ClothesCard
+                  image="/purple.png"
+                  name="Polo With Tipping Details"
+                  ratingImage="/45.5.png"
+                  price="$180"
+                />
+                <ClothesCard
+                  image="/.png"
+                  name="Black Striped T-Shirt"
+                  ratingImage="/5.0.png"
+                  price="$210"
+                  orignalPrice="$150"
+                  discountCopen="-30%"
+                />
+              </div>
+      
+              <button className="text-black w-40 sm:w-56 lg:w-[237px] h-12 sm:h-14 lg:h-[66px] rounded-full bg-white p-4 flex justify-center mx-auto border mt-8">
+                View All
+              </button>
+            </div>
+      {/* third page end */}
+ <br />
+      {/* fourth page start */}
       <div className="bg-black text-white p-6 sm:p-8 lg:p-10  max-w-[1100px] flex flex-col items-center rounded-2xl -mb-7 mx-auto">
         {/* Content Wrapper */}
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 md:space-x-6">
@@ -316,9 +363,10 @@ export default function Product(){
         </div>
       </div>
 
-      {/* third page end */}
+      {/* fourth page end */}
 
     </div>
+    
 
     )
 }

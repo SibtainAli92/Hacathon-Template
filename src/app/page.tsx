@@ -144,10 +144,12 @@ export default function Home() {
           View All
         </button>
       </div>
+      {/* third page end */}
 
       {/* Divider */}
       <hr className="my-12" />
 
+      {/* fourth page start */}
       {/* Top Selling Section */}
       <div className="h-auto flex flex-col justify-center px-4 md:px-8">
         <h1 className="text-3xl sm:text-4xl lg:text-6xl text-center font-extrabold mb-8">
