@@ -39,7 +39,7 @@ export default function Navbar() {
           <Link href="/product_detial" className="text-lg hover:text-[#504f4d] hover:underline">
             On Sale
           </Link>
-          <Link href="/project" className="text-lg hover:text-[#504f4d] hover:underline">
+          <Link href="/category" className="text-lg hover:text-[#504f4d] hover:underline">
             New Arrivals
           </Link>
           <Link href="/contact" className="text-lg hover:text-[#504f4d] hover:underline">
@@ -86,7 +86,7 @@ export default function Navbar() {
           <Link href="/product_detial" className="text-black">
             On Sale
           </Link>
-          <Link href="/project" className="text-black">
+          <Link href="/category" className="text-black">
             New Arrivals
           </Link>
           <Link href="/contact" className="text-black">

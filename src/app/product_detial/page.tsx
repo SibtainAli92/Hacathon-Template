@@ -72,7 +72,7 @@ export default function Product(){
     <div>
       {/* First page start */}
       <div>
-        <div className="mx-auto max-w-[1400px] gap-6 lg:gap-16 h-auto xl:h-[820px] px-10 py-6 flex md:flex-row flex-col">
+        <div className="mx-auto gap-6 lg:gap-16 h-auto xl:h-[820px] px-10 py-6 xl:items-start items-center flex xl:flex-row flex-col">
           {/* image section start  */}
           <div className="lg:w-[553px] w-auto h-[500px] flex px-10  lg:flex-row flex-col-reverse lg:gap-5 md:gap-3 gap-10 items-center">
             <div className="lg:w-[76px] w-auto h-[416px] lg:flex lg:flex-col flex flex-row gap-2 lg:gap-8">
@@ -163,7 +163,7 @@ export default function Product(){
               <p className="font-normal font-poppins text-gray-700 text-sm/[21px]">
                 Choose Size
               </p>
-              <div className=" flex items-center w-[500px] gap-4">
+              <div className=" flex items-center w-auto md:w-[500px] gap-4">
                 <button
                   type="button"
                   className="flex items-center justify-center sm:w-[104px] w-[54px] h-[48px] rounded-full hover:bg-black hover:text-white bg-[#F0F0F0]"
@@ -207,7 +207,7 @@ export default function Product(){
               <Link href={"/cart"}>
                 <button
                     type="button"
-                    className="flex items-center justify-center text-white sm:w-[400px] w-[190px] h-16 rounded-full bg-black"
+                    className="flex items-center justify-center text-white sm:w-[400px] w-[130px] h-16 rounded-full bg-black"
                 >
                     Add To Cart
                 </button>
@@ -249,7 +249,7 @@ export default function Product(){
               <option value="Highest">Highest Rating</option>
               <option value="Lowest">Lowest Rating</option>
             </select>
-            <button className="px-4 py-2 bg-black text-white rounded-full">
+            <button className=" py-2 bg-black text-white rounded-full">
               Write a Review
             </button>
           </div>
