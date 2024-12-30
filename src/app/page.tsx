@@ -199,49 +199,43 @@ export default function Home() {
           BROWSE BY DRESS STYLE
         </h1>
 
-
-
-
-      
-      <div className="flex flex-col gap-20 mx-auto">
-        {/* First Row */}
-        <div className="grid lg:grid-cols-[400px_600px] grid-cols-1 h-72 gap-3 mx-auto">
-          <Image
-            src="/casual.png"
-            alt="Casual"
-            width={407}
-            height={289}
-            className="w-full max-w-full h-auto rounded-lg"
-          />
-          <Image
-            src="/formal.png"
-            alt="Formal"
-            width={684}
-            height={289}
-            className="w-full max-w-full h-auto rounded-lg"
-          />
+        <div className="flex flex-col gap-20 mx-auto">
+          {/* First Row */}
+          <div className="grid lg:grid-cols-[400px_600px] grid-cols-1 h-72 gap-3 mx-auto">
+            <Image
+              src="/casual.png"
+              alt="Casual"
+              width={407}
+              height={289}
+              className="w-full max-w-full h-auto rounded-lg"
+            />
+            <Image
+              src="/formal.png"
+              alt="Formal"
+              width={684}
+              height={289}
+              className="w-full max-w-full h-auto rounded-lg"
+            />
           </div>
 
-
-        {/* Second Row */}
-        <div className="grid lg:grid-cols-[600px_400px] grid-cols-1 h-72 gap-3 mx-auto">
-          <Image
-            src="/party.png"
-            alt="Party"
-            width={684}
-            height={289}
-            className="w-full max-w-full h-auto rounded-lg"
-          />
-          <Image
-            src="/gym.png"
-            alt="Gym"
-            width={407}
-            height={289}
-            className="w-full max-w-full h-auto rounded-lg"
-          />
+          {/* Second Row */}
+          <div className="grid lg:grid-cols-[600px_400px] grid-cols-1 h-72 gap-3 mx-auto">
+            <Image
+              src="/party.png"
+              alt="Party"
+              width={684}
+              height={289}
+              className="w-full max-w-full h-auto rounded-lg"
+            />
+            <Image
+              src="/gym.png"
+              alt="Gym"
+              width={407}
+              height={289}
+              className="w-full max-w-full h-auto rounded-lg"
+            />
           </div>
-      </div>
-
+        </div>
       </div>
 
       {/* fifth page end */}

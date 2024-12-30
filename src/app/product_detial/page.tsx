@@ -1,15 +1,12 @@
-"use client"
-import Image from "next/image"
-import Link from "next/link"
+"use client";
+import Image from "next/image";
+import Link from "next/link";
 import ClothesCard from "@/components/Shart_Card_01";
 import { useState } from "react";
 
-
-export default function Product(){
+export default function Product() {
   // count product
   const [count, setCount] = useState(1);
-
-
 
   const increment = () => {
     setCount(count + 1);
@@ -67,8 +64,7 @@ export default function Product(){
       date: "August 19, 2023",
     },
   ];
-    return (
-        
+  return (
     <div>
       {/* First page start */}
       <div>
@@ -117,21 +113,25 @@ export default function Product(){
           {/* details section start */}
           <div className="h-auto xl:h-[730px] lg:w-[606px] w-auto flex flex-col gap-4">
             <h2 className="font-poppins text-4xl font-extrabold">
-            ONE LIFE GRAPHIC T-SHIRT
-           </h2>
+              ONE LIFE GRAPHIC T-SHIRT
+            </h2>
 
             <div className="flex gap-5 items-center">
               <Image src={"/45.5.png"} alt="rating" width={139} height={24} />
             </div>
             <div className="flex items-center gap-3">
               <span className="text-2xl font-bold text-black">$260</span>
-              <span className="line-through text-2xl text-gray-400 ml-2">$300</span>
-              <span className="rounded-xl text-center py-1 bg-red-200 h-[28px] w-[58px] text-red-500">-40%</span>
+              <span className="line-through text-2xl text-gray-400 ml-2">
+                $300
+              </span>
+              <span className="rounded-xl text-center py-1 bg-red-200 h-[28px] w-[58px] text-red-500">
+                -40%
+              </span>
             </div>
 
             <p className="text-1xl font-normal w-auto lg:w-[424px] text-gray-600">
-            This graphic t-shirt is perfect for any occasion. Crafted from a soft and breathable
-            fabric, it offers superior comfort and style.
+              This graphic t-shirt is perfect for any occasion. Crafted from a
+              soft and breathable fabric, it offers superior comfort and style.
             </p>
             <hr />
 
@@ -145,7 +145,7 @@ export default function Product(){
                   type="button"
                   className="w-[30px] h-[30px] rounded-full bg-[#4F4631] flex justify-center items-center"
                 >
-                  <Image src="/tick (2).png" alt="tick" width={13} height={9}/>
+                  <Image src="/tick (2).png" alt="tick" width={13} height={9} />
                 </button>
                 <button
                   type="button"
@@ -158,8 +158,8 @@ export default function Product(){
               </div>
             </div>
             <hr />
-{/* Choose size */}
-<div className="h-[63px] flex flex-col gap-3 justify-between mt-3">
+            {/* Choose size */}
+            <div className="h-[63px] flex flex-col gap-3 justify-between mt-3">
               <p className="font-normal font-poppins text-gray-700 text-sm/[21px]">
                 Choose Size
               </p>
@@ -206,10 +206,10 @@ export default function Product(){
               </span>
               <Link href={"/cart"}>
                 <button
-                    type="button"
-                    className="flex items-center justify-center text-white sm:w-[400px] w-[130px] h-16 rounded-full bg-black"
+                  type="button"
+                  className="flex items-center justify-center text-white sm:w-[400px] w-[130px] h-16 rounded-full bg-black"
                 >
-                    Add To Cart
+                  Add To Cart
                 </button>
               </Link>
             </div>
@@ -223,123 +223,125 @@ export default function Product(){
 
       {/* Second page start */}
       <div className="p-6 md:p-12 bg-gray-100 min-h-screen">
-      <div className="max-w-6xl mx-auto">
-        {/* Tabs Section */}
-        <div className="flex justify-center text-2xl font-[Satoshi] space-x-6 text-gray-500 border-b">
-          <button className="pb-2 border-b-2 border-transparent hover:border-black text-black">
-            Product Details
-          </button>
-          <button className="pb-2 border-b-2 border-black text-black">
-            Rating & Reviews
-          </button>
-          <button className="pb-2 border-b-2 border-transparent hover:border-black">
-            FAQs
-          </button>
-        </div>
+        <div className="max-w-6xl mx-auto">
+          {/* Tabs Section */}
+          <div className="flex justify-center text-2xl font-[Satoshi] space-x-6 text-gray-500 border-b">
+            <button className="pb-2 border-b-2 border-transparent hover:border-black text-black">
+              Product Details
+            </button>
+            <button className="pb-2 border-b-2 border-black text-black">
+              Rating & Reviews
+            </button>
+            <button className="pb-2 border-b-2 border-transparent hover:border-black">
+              FAQs
+            </button>
+          </div>
 
-        {/* Reviews Header */}
-        <div className="mt-6 flex justify-between items-center">
-          <h1 className="text-2xl font-[Satoshi] font-bold">All Reviews (451)</h1>
-          <div className="flex items-center space-x-4">
-            <select
-              className="border rounded-full p-2 bg-white"
-              defaultValue="Latest"
-            >
-              <option value="Latest">Latest</option>
-              <option value="Highest">Highest Rating</option>
-              <option value="Lowest">Lowest Rating</option>
-            </select>
-            <button className=" py-2 bg-black text-white rounded-full">
-              Write a Review
+          {/* Reviews Header */}
+          <div className="mt-6 flex justify-between items-center">
+            <h1 className="text-2xl font-[Satoshi] font-bold">
+              All Reviews (451)
+            </h1>
+            <div className="flex items-center space-x-4">
+              <select
+                className="border rounded-full p-2 bg-white"
+                defaultValue="Latest"
+              >
+                <option value="Latest">Latest</option>
+                <option value="Highest">Highest Rating</option>
+                <option value="Lowest">Lowest Rating</option>
+              </select>
+              <button className=" py-2 bg-black text-white rounded-full">
+                Write a Review
+              </button>
+            </div>
+          </div>
+
+          {/* Reviews Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+            {reviews.map((review) => (
+              <div
+                key={review.id}
+                className="bg-white rounded-3xl shadow-md p-4 flex flex-col space-y-4"
+              >
+                <div className="flex items-center space-x-1">
+                  {Array.from({ length: review.rating }).map((_, i) => (
+                    <span key={i} className="text-yellow-400 text-4xl">
+                      ★
+                    </span>
+                  ))}
+                  {/* {Array.from({ length: 5 - review.rating }).map((_, i) => (
+                  <span key={i} className="text-gray-300">★</ span>
+                ))} */}
+                </div>
+                <div className="flex items-center  space-x-2">
+                  <span className="text-lg font-semibold">{review.name}</span>
+                  <span>
+                    <Image src="/tick.png" alt="tick" width={24} height={24} />
+                  </span>
+                </div>
+                <p className="text-gray-500">{review.review}</p>
+                <p className="text-gray-700 text-sm">Posted on {review.date}</p>
+                <button className="self-end text-gray-400 hover:text-black">
+                  ●●●
+                </button>
+              </div>
+            ))}
+          </div>
+
+          {/* Load More Button */}
+          <div className="flex justify-center mt-8">
+            <button className="px-6 py-2 border rounded-full bg-gray-200 hover:bg-gray-300">
+              Load More Reviews
             </button>
           </div>
         </div>
-
-
-
-
-
-        {/* Reviews Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-          {reviews.map((review) => (
-            <div
-              key={review.id}
-              className="bg-white rounded-3xl shadow-md p-4 flex flex-col space-y-4"
-            >
-              <div className="flex items-center space-x-1">
-                {Array.from({ length: review.rating }).map((_, i) => (
-                  <span key={i} className="text-yellow-400 text-4xl">★</span>
-                ))}
-                {/* {Array.from({ length: 5 - review.rating }).map((_, i) => (
-                  <span key={i} className="text-gray-300">★</ span>
-                ))} */}
-              </div>
-              <div className="flex items-center  space-x-2">
-                <span className="text-lg font-semibold">{review.name}</span>
-                <span ><Image src="/tick.png" alt="tick" width={24} height={24} /></span>
-              </div>
-              <p className="text-gray-500">{review.review}</p>
-              <p className="text-gray-700 text-sm">Posted on {review.date}</p>
-              <button className="self-end text-gray-400 hover:text-black">
-                ●●●
-              </button>
-            </div>
-          ))}
-        </div>
-
-        {/* Load More Button */}
-        <div className="flex justify-center mt-8">
-          <button className="px-6 py-2 border rounded-full bg-gray-200 hover:bg-gray-300">
-            Load More Reviews
-          </button>
-        </div>
       </div>
-    </div>
       {/* Second page end */}
 
       {/* third page start */}
       <div className="h-auto flex flex-col justify-center px-4 md:px-8">
-              <h1 className="text-3xl sm:text-4xl lg:text-6xl text-center font-extrabold mb-8">
-              YOU MIGHT ALSO LIKE
-              </h1>
-      
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <ClothesCard
-                  image="/blue.png"
-                  name="Polo With Contrast Trims"
-                  ratingImage="/4.0.png"
-                  price="$212"
-                  orignalPrice="$242"
-                  discountCopen="-20%"
-                />
-                <ClothesCard
-                  image="/pink.png"
-                  name="Gradient Graphic T-Shirt"
-                  ratingImage="/3.5.png"
-                  price="$145"
-                />
-                <ClothesCard
-                  image="/purple.png"
-                  name="Polo With Tipping Details"
-                  ratingImage="/45.5.png"
-                  price="$180"
-                />
-                <ClothesCard
-                  image="/white.png"
-                  name="Black Striped T-Shirt"
-                  ratingImage="/5.0.png"
-                  price="$210"
-                  orignalPrice="$150"
-                  discountCopen="-30%"
-                />
-              </div>
-      
-              <button className="text-black w-40 sm:w-56 lg:w-[237px] h-12 sm:h-14 lg:h-[66px] rounded-full bg-white p-4 flex justify-center mx-auto border mt-8">
-                View All
-              </button>
-            </div>
+        <h1 className="text-3xl sm:text-4xl lg:text-6xl text-center font-extrabold mb-8">
+          YOU MIGHT ALSO LIKE
+        </h1>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <ClothesCard
+            image="/blue.png"
+            name="Polo With Contrast Trims"
+            ratingImage="/4.0.png"
+            price="$212"
+            orignalPrice="$242"
+            discountCopen="-20%"
+          />
+          <ClothesCard
+            image="/pink.png"
+            name="Gradient Graphic T-Shirt"
+            ratingImage="/3.5.png"
+            price="$145"
+          />
+          <ClothesCard
+            image="/purple.png"
+            name="Polo With Tipping Details"
+            ratingImage="/45.5.png"
+            price="$180"
+          />
+          <ClothesCard
+            image="/white.png"
+            name="Black Striped T-Shirt"
+            ratingImage="/5.0.png"
+            price="$210"
+            orignalPrice="$150"
+            discountCopen="-30%"
+          />
+        </div>
+
+        <button className="text-black w-40 sm:w-56 lg:w-[237px] h-12 sm:h-14 lg:h-[66px] rounded-full bg-white p-4 flex justify-center mx-auto border mt-8">
+          View All
+        </button>
+      </div>
       {/* third page end */}
- <br />
+      <br />
       {/* fourth page start */}
       <div className="bg-black text-white p-6 sm:p-8 lg:p-10  max-w-[1100px] flex flex-col items-center rounded-2xl -mb-7 mx-auto">
         {/* Content Wrapper */}
@@ -364,9 +366,6 @@ export default function Product(){
       </div>
 
       {/* fourth page end */}
-
     </div>
-    
-
-    )
+  );
 }

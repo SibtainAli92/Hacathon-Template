@@ -42,7 +42,7 @@ export default function Navbar() {
           <Link href="/category" className="text-lg hover:text-[#504f4d] hover:underline">
             New Arrivals
           </Link>
-          <Link href="/contact" className="text-lg hover:text-[#504f4d] hover:underline">
+          <Link href="/brand" className="text-lg hover:text-[#504f4d] hover:underline">
             Brand
           </Link>
         </nav>
@@ -89,7 +89,7 @@ export default function Navbar() {
           <Link href="/category" className="text-black">
             New Arrivals
           </Link>
-          <Link href="/contact" className="text-black">
+          <Link href="/brand" className="text-black">
             Brand
           </Link>
         </div>
