@@ -68,7 +68,7 @@ export default function Product() {
     <div>
       {/* First page start */}
       <div>
-        <div className="mx-auto gap-6 lg:gap-16 h-auto xl:h-[820px] px-10 py-6 xl:items-start items-center flex xl:flex-row flex-col">
+        <div className="mx-auto w-fit gap-6 lg:gap-16 h-auto xl:h-[820px] px-10 py-6 xl:items-start items-center flex xl:flex-row flex-col">
           {/* image section start  */}
           <div className="lg:w-[553px] w-auto h-[500px] flex px-10  lg:flex-row flex-col-reverse lg:gap-5 md:gap-3 gap-10 items-center">
             <div className="lg:w-[76px] w-auto h-[416px] lg:flex lg:flex-col flex flex-row gap-2 lg:gap-8">
@@ -222,7 +222,7 @@ export default function Product() {
       {/* First page end */}
 
       {/* Second page start */}
-      <div className="p-6 md:p-12 bg-gray-100 min-h-screen">
+      <div className="p-6 md:p-12">
         <div className="max-w-6xl mx-auto">
           {/* Tabs Section */}
           <div className="flex justify-center text-2xl font-[Satoshi] space-x-6 text-gray-500 border-b">
@@ -305,7 +305,7 @@ export default function Product() {
           YOU MIGHT ALSO LIKE
         </h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mx-auto">
           <ClothesCard
             image="/blue.png"
             name="Polo With Contrast Trims"
@@ -341,31 +341,6 @@ export default function Product() {
         </button>
       </div>
       {/* third page end */}
-      <br />
-      {/* fourth page start */}
-      <div className="bg-black text-white p-6 sm:p-8 lg:p-10  max-w-[1100px] flex flex-col items-center rounded-2xl -mb-7 mx-auto">
-        {/* Content Wrapper */}
-        <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 md:space-x-6">
-          {/* Heading */}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center md:text-left">
-            STAY UP TO DATE ABOUT OUR LATEST OFFERS
-          </h2>
-
-          {/* Input and Button */}
-          <div className="flex flex-col justify-center gap-4 md:gap-2 w-full h-[180px] md:w-auto">
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              className="rounded-full text-center  focus:outline-none w-full md:w-[349px] h-[48px] text-black"
-            />
-            <button className="bg-white text-black px-4 py-2 rounded-full font-medium w-full md:w-[349px] h-[48px]">
-              Subscribe to Newsletter
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* fourth page end */}
     </div>
   );
 }
