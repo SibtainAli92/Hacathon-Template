@@ -68,9 +68,9 @@ export default function Product() {
     <div>
       {/* First page start */}
       <div>
-        <div className="mx-auto w-fit gap-6 lg:gap-16 h-auto xl:h-[820px] px-10 py-6 xl:items-start items-center flex xl:flex-row flex-col">
+        <div className="mx-auto max-w-[1440px] gap-6 lg:gap-16 h-auto xl:h-[820px] px-10 py-6 xl:items-start items-center flex xl:flex-row flex-col">
           {/* image section start  */}
-          <div className="lg:w-[553px] w-auto h-[500px] flex px-10  lg:flex-row flex-col-reverse lg:gap-5 md:gap-3 gap-10 items-center">
+          <div className="lg:w-[553px] w-auto  h-[500px] flex px-10  lg:flex-row flex-col-reverse lg:gap-5 md:gap-3 gap-10 items-center">
             <div className="lg:w-[76px] w-auto h-[416px] lg:flex lg:flex-col flex flex-row gap-2 lg:gap-8">
               <span className="w-[76px] h-[80px] rounded-md flex items-center bg-[#F9F1E7]">
                 <Image
@@ -111,7 +111,7 @@ export default function Product() {
           {/* image section end */}
 
           {/* details section start */}
-          <div className="h-auto xl:h-[730px] lg:w-[606px] w-auto flex flex-col gap-4">
+          <div className="h-auto xl:h-[730px] text-wrap lg:w-[606px] w-auto flex flex-col gap-4">
             <h2 className="font-poppins text-4xl font-extrabold">
               ONE LIFE GRAPHIC T-SHIRT
             </h2>

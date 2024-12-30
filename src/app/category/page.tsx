@@ -142,7 +142,7 @@ export default function Category() {
       </aside>
 
       {/* Products Section */}
-      <main className="flex-grow px-6 lg:px-12 py-8">
+      <main className="flex-grow px-6 lg:px-12 py-8 ml-7">
         <h1 className="text-3xl font-extrabold mb-6">Casual</h1>
 
         {/* Products Grid */}
