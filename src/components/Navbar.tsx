@@ -85,7 +85,7 @@ export default function Navbar() {
           <Link href="/category" className="text-black">
             Shop
           </Link>
-          <Link href="/on-sale" className="text-black">
+          <Link href="/#on-sale" className="text-black">
             On Sale
           </Link>
           <Link href="/#new-arrivals" className="text-black">
