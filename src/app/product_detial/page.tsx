@@ -204,7 +204,7 @@ export default function Product() {
                   +
                 </button>
               </span>
-              <Link href={"/cart"}>
+              <Link href="/brand">
                 <button
                   type="button"
                   className="flex items-center justify-center text-white sm:w-[400px] w-[130px] h-16 rounded-full bg-black"

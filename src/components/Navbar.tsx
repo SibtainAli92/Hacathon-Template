@@ -23,9 +23,11 @@ export default function Navbar() {
         </button>
 
         {/* Logo */}
+        <Link href="/">
         <h1 className="text-xl md:text-4xl font-extrabold font-Poppins">
           SHOP.CO
         </h1>
+        </Link>
 
         {/* Navigation Links */}
         <nav
@@ -33,16 +35,16 @@ export default function Navbar() {
             menuOpen ? "flex" : "hidden"
           } md:space-x-8`}
         >
-          <Link href="/" className="text-lg hover:text-[#504f4d] hover:underline">
+          <Link href="/category" className="text-lg hover:text-[#504f4d] hover:underline">
             Shop
           </Link>
-          <Link href="/product_detial" className="text-lg hover:text-[#504f4d] hover:underline">
+          <Link href="/#on-sale" className="text-lg hover:text-[#504f4d] hover:underline">
             On Sale
           </Link>
-          <Link href="/category" className="text-lg hover:text-[#504f4d] hover:underline">
+          <Link href="/#new-arrivals" className="text-lg hover:text-[#504f4d] hover:underline">
             New Arrivals
           </Link>
-          <Link href="/brand" className="text-lg hover:text-[#504f4d] hover:underline">
+          <Link href="/#brand" className="text-lg hover:text-[#504f4d] hover:underline">
             Brand
           </Link>
         </nav>
@@ -80,16 +82,16 @@ export default function Navbar() {
       {/* Mobile Navigation (Dropdown) */}
       {menuOpen && (
         <div className="flex flex-col items-center space-y-2 bg-white p-4 md:hidden">
-          <Link href="/" className="text-black">
+          <Link href="/category" className="text-black">
             Shop
           </Link>
-          <Link href="/product_detial" className="text-black">
+          <Link href="/on-sale" className="text-black">
             On Sale
           </Link>
-          <Link href="/category" className="text-black">
+          <Link href="/#new-arrivals" className="text-black">
             New Arrivals
           </Link>
-          <Link href="/brand" className="text-black">
+          <Link href="/#brand" className="text-black">
             Brand
           </Link>
         </div>

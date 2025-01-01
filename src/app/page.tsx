@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import ClothesCard from "@/components/Shart_Card_01";
 import { GoArrowLeft } from "react-icons/go";
 import { GoArrowRight } from "react-icons/go";
@@ -18,9 +19,11 @@ export default function Home() {
             designed to bring out your individuality and cater to your sense of
             style.
           </p>
+          <Link href="/category">
           <button className="text-white w-[160px] sm:w-[200px] lg:w-[237px] h-[45px] sm:h-[50px] lg:h-[66px] rounded-full bg-black p-3 lg:p-4">
             Shop Now
           </button>
+          </Link>
         </div>
 
         <div className="relative">
@@ -40,7 +43,7 @@ export default function Home() {
                 alt="vector"
                 width={104}
                 height={104}
-                className="object-contain"
+                className="object-contain transform transition-transform duration-300 hover:scale-110"
               />
             </div>
             <div className="absolute md:-left-5 left-1 top-44">
@@ -49,7 +52,7 @@ export default function Home() {
                 alt="vector"
                 width={56}
                 height={56}
-                className="object-contain"
+                className="object-contain transform transition-transform duration-300 hover:scale-110"
               />
             </div>
           </div>
@@ -60,41 +63,41 @@ export default function Home() {
 
       {/* Second page start */}
       <div className="bg-black mx-w-[1440px] py-4 sm:py-8 flex items-center justify-center mx-auto">
-        <div className="flex flex-wrap justify-center gap-8 sm:gap-16 lg:gap-24">
+        <div className="flex flex-wrap justify-center gap-8 sm:gap-16 lg:gap-24 transf">
           <Image
             src="/versace.png"
             alt="versace"
             width={120}
             height={25}
-            className="hover:cursor-pointer"
+            className="hover:cursor-pointer transform transition-transform duration-300 hover:scale-110"
           />
           <Image
             src="/zara.png"
             alt="zara"
             width={70}
             height={30}
-            className="hover:cursor-pointer"
+            className="hover:cursor-pointer transform transition-transform duration-300 hover:scale-110"
           />
           <Image
             src="/gucci.png"
             alt="gucci"
             width={110}
             height={30}
-            className="hover:cursor-pointer"
+            className="hover:cursor-pointer transform transition-transform duration-300 hover:scale-110"
           />
           <Image
             src="/prada.png"
             alt="prada"
             width={140}
             height={30}
-            className="hover:cursor-pointer"
+            className="hover:cursor-pointer transform transition-transform duration-300 hover:scale-110"
           />
           <Image
             src="/calvin.png"
             alt="calvin"
             width={150}
             height={30}
-            className="hover:cursor-pointer"
+            className="hover:cursor-pointer transform transition-transform duration-300 hover:scale-110"
           />
         </div>
       </div>
@@ -102,7 +105,7 @@ export default function Home() {
 
       {/* third page start */}
       {/* New Arrival Section */}
-      <div className="h-auto flex flex-col justify-center mt-10 px-4 md:px-8 ml-7">
+      <div className="h-auto flex flex-col justify-center mt-10 px-4 md:px-8 ml-7" id="new-arrivals">
         <h1 className="text-3xl sm:text-4xl lg:text-6xl text-center font-extrabold mb-8">
           NEW ARRIVAL
         </h1>
@@ -138,7 +141,7 @@ export default function Home() {
           />
         </div>
 
-        <button className="text-black w-40 sm:w-56 lg:w-[237px] h-12 sm:h-14 lg:h-[66px] rounded-full bg-white p-4 flex justify-center mx-auto border mt-8">
+        <button  className="text-black w-40 sm:w-56 lg:w-[237px] h-12 sm:h-14 lg:h-[66px] rounded-full bg-white p-4 flex justify-center mx-auto border mt-8">
           View All
         </button>
       </div>
@@ -149,7 +152,7 @@ export default function Home() {
 
       {/* fourth page start */}
       {/* Top Selling Section */}
-      <div className="h-auto flex flex-col justify-center px-4 md:px-8 ml-7">
+      <div className="h-auto flex flex-col justify-center px-4 md:px-8 ml-7" id="on-sale">
         <h1 className="text-3xl sm:text-4xl lg:text-6xl text-center font-extrabold mb-8">
           TOP SELLING
         </h1>
@@ -191,7 +194,7 @@ export default function Home() {
       {/* fourth page end */}
 
       {/* fifth page start */}
-      <div className="space-y-7 py-20 w-full max-w-[1239px] h-auto bg-[#F0F0F0] mx-auto rounded-3xl px-4 sm:px-8">
+      <div className="space-y-7 py-20 w-full max-w-[1239px] h-auto bg-[#F0F0F0] mx-auto rounded-3xl px-4 sm:px-8" id="brand">
         {/* Section Title */}
         <h1 className="flex justify-center font-extrabold text-2xl sm:text-3xl md:text-4xl mb-8 sm:mb-12 md:mb-16 text-center">
           BROWSE BY DRESS STYLE

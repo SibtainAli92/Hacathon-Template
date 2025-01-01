@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface ClothesCard {
     image: string;
@@ -12,7 +13,15 @@ interface ClothesCard {
 export default function ClothesCard({ image, name, ratingImage, price, orignalPrice, discountCopen }: ClothesCard) {
     return (
         <div className="flex flex-col gap-7">
-            <Image src={image} alt={'showimage'} width={295} height={298} className="rounded-2xl" />
+            <Link href="/product_detial">
+            <Image 
+            src={image} 
+            alt={'showimage'} 
+            width={295} 
+            height={298} 
+            className="rounded-2xl transform transition-transform duration-300 hover:scale-110" 
+            />
+            </Link>
             <div>
                 <span className="justify-center w-full">
                     <h4 className="font-bold ml-1">{name}</h4>
