@@ -1,13 +1,75 @@
 "use client";
-
-import { useState } from "react";
-import ClothesCard from "@/components/Shart_Card_01";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { groq } from "next-sanity";
+import { client } from "@/sanity/lib/client";
+import { Products } from "../../../types/products";
+import Image from "next/image";
+import { urlFor } from "@/sanity/lib/image";
+import { useAppDispatch } from "../../../hooks/redux";
+import { addToCart } from "../../../redux/cartSlice";
 
 export default function Category() {
+  const dispatch = useAppDispatch();
   const [isPriceOpen, setPriceOpen] = useState(true);
   const [isColorOpen, setColorOpen] = useState(true);
   const [isSizeOpen, setSizeOpen] = useState(true);
 
+
+
+  
+
+  
+  const [product, setProduct] = useState<Products[]>([]);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const productFetchData: Products[] = await client.fetch(
+          groq`*[_type == "products"]{
+            _id,
+            name,
+            _type,
+            image,
+            price,
+            description,
+            category
+          }`
+        );
+        setProduct(productFetchData);
+        setError(null);
+      } catch (err) {
+        console.error("Error fetching products:", err);
+        setError("Failed to load products. Please try again later.");
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="flex flex-col items-center justify-center h-screen">
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-black rounded-full animate-spin"></div>
+        <p className="mt-4 text-lg font-semibold text-black">Loading product, please wait...</p>
+      </div>
+    );
+  }
+  if (error) {
+    return (
+      <div className="flex justify-center items-center h-screen bg-red-50">
+        <div className="text-center p-6 bg-red-100 shadow-lg rounded-md">
+          <p className="text-xl text-red-600 font-semibold mb-4">Something went wrong.</p>
+          <p className="text-md text-red-500">{error}</p>
+        </div>
+      </div>
+    );
+  }
+
+    
   return (
     <div className="flex flex-col lg:flex-row">
       {/* Filters Section */}
@@ -146,69 +208,49 @@ export default function Category() {
         <h1 className="text-3xl font-extrabold mb-6">Casual</h1>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <ClothesCard
-            image="/pink.png"
-            name="Gradient Graphic T-Shirt"
-            ratingImage="/3.5.png"
-            price="$145"
-          />
-          <ClothesCard
-            image="/purple.png"
-            name="Polo With Tipping Details"
-            ratingImage="/45.5.png"
-            price="$180"
-          />
-          <ClothesCard
-            image="/white.png"
-            name="Black Striped T-Shirt"
-            ratingImage="/5.0.png"
-            price="$210"
-            orignalPrice="$150"
-            discountCopen="-30%"
-          />
-          <ClothesCard
-            image="/pent.png"
-            name="Skinny Fit Jeans"
-            ratingImage="/3.5.png"
-            price="$240"
-            orignalPrice="$260"
-            discountCopen="-20%"
-          />
-          <ClothesCard
-            image="/shirt.png"
-            name="Chequered Shirt"
-            ratingImage="/45.5.png"
-            price="$180"
-          />
-          <ClothesCard
-            image="/orange.png"
-            name="Sleeve Striped T-shirt"
-            ratingImage="/45.5.png"
-            price="$130"
-            orignalPrice="$160"
-            discountCopen="-30%"
-          />
-          <ClothesCard
-            image="/green.png"
-            name="Vertical Striped Shirt"
-            ratingImage="/5.0.png"
-            price="$212"
-            orignalPrice="$232"
-            discountCopen="-20%"
-          />
-          <ClothesCard
-            image="/orange (2).png"
-            name="Courage Graphic T-Shirt"
-            ratingImage="/4.0.png"
-            price="$145"
-          />
-          <ClothesCard
-            image="/short.png"
-            name="Loose Fit Bermuda Short"
-            ratingImage="/3.0.png"
-            price="$80"
-          />
+        <div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {product.map((element: Products) => (
+              <div key={element._id} className="group relative">
+              <Link
+                href={`/category/${element._id}`}
+              >
+                <div className="flex flex-col gap-4 relative">
+                  {/* Image Section */}
+                  <div className="relative w-[295px] h-[298px] mx-auto">
+                    {element.image &&(
+                    <Image
+                      src={urlFor(element.image).url()}
+                      alt={"showimage"}
+                      width={200}
+                      height={200}
+                      className="rounded-2xl object-cover w-full h-full gap-2 transform transition-transform duration-300 hover:scale-110"
+                    />
+                  )}
+                    {/* Add to Cart Button */}
+                    <button
+                      onClick={() => {
+                        dispatch(addToCart(element));
+                      }}
+                      className="absolute mt-[240px] inset-0 w-[300px] h-[60px] rounded-lg bg-black bg-opacity-50 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+
+                  {/* Product Info */}
+                  <div className="text-center">
+                    <h4 className="font-bold">{element.name}</h4>
+                    <div className="flex justify-center gap-4 text-sm">
+                      <p className="font-bold">${element.price}</p>
+                    
+                    </div>
+                  </div>
+                </div>
+              </Link>
+              </div>
+            ))}
+          </div>
         </div>
       </main>
     </div>

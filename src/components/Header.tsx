@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link";
 import { RxCross1 } from "react-icons/rx";
 

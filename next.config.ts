@@ -1,10 +1,8 @@
-// /** @type {import('next').NextConfig} */
-// // const nextConfig: import('next').NextConfig = {
-// //   reactStrictMode: true,
-// //   distDir: 'build', 
-// // };
+import type  { NextConfig } from "next";
 
-// // module.exports = nextConfig;
-
-// const nextConfig = {}
-// export default nextConfig
+const nextConfig: NextConfig = {
+    images: {
+        domains: ['cdn.sanity.io']
+    }
+}
+export default nextConfig;

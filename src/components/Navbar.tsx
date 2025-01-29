@@ -2,13 +2,36 @@
 import Link from "next/link";
 import { BsSearch } from "react-icons/bs";
 import React, { useState } from "react";
-import Image from "next/image";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { IoMdHeartEmpty } from "react-icons/io";
+import { useAppSelector } from "../../hooks/redux";
+import { getCart } from "../../redux/cartSlice";
+import { useRouter } from "next/navigation";
+
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const productCart = useAppSelector(getCart)
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+  const [query , setquery] = useState<string>("")
+
+
+  const router = useRouter();
+  const serachResultHandler = () =>{
+    router.push(`/search/${query}`)
+  }
+
+  
+  const handleSearch = () => {
+    if (query.trim() === "") {
+      console.error("Search query is empty");
+      return;
+    }
+    console.log("Searching for:", query);
+    // Perform your search logic here
   };
 
   return (
@@ -52,31 +75,43 @@ export default function Navbar() {
         {/* Search Bar */}
         <div className="flex items-center w-fit max-w-[400px]">
           {/* Full search bar for medium+ screens */}
-          <div className="hidden lg:flex items-center h-10 bg-[#F5F5F5] rounded-full overflow-hidden w-64 xl:w-full">
+          <div className="hidden lg:flex items-center  bg-[#F5F5F5] rounded-full overflow-hidden w-64 xl:w-full">
             <label htmlFor="Search-bar" className="flex items-center w-full">
+              <button onClick={serachResultHandler}>
               <BsSearch className="text-2xl ml-4" />
+              </button>
               <input
                 type="text"
                 placeholder="Search for Product..."
                 id="Search-bar"
                 className="flex-grow outline-none placeholder:text-lg bg-transparent py-2 px-4"
+                value={query}
+              onChange={(e) => setquery (e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  handleSearch(); // Call the search function when "Enter" is pressed
+                }
+              }}
               />
             </label>
           </div>
           {/* Search icon for small screens */}
-          <button className="flex lg:hidden ml-24 items-center justify-center w-10 h-10 text-black bg-gray-200 rounded-full hover:bg-gray-300">
+          <button className="flex lg:hidden  items-center justify-center w-10 h-10 text-black bg-gray-200 rounded-full hover:bg-gray-300">
             <BsSearch className="text-xl" />
           </button>
         </div>
 
         {/* User Icon */}
-        <Image
-          src="/Frame.png"
-          alt="frame"
-          width={50}
-          height={50}
-          className="ml-4"
-        />
+        <div className="flex gap-4 items-center md:mr-30">
+          <IoMdHeartEmpty className="h-9 w-9" />
+          <Link href={'/cart'} className="relative">
+  <AiOutlineShoppingCart className="h-9 w-9" />
+  <p className="absolute top-0 right-0 text-xs rounded-full px-2 py-1 bg-red-500 text-white transform translate-x-1/2 -translate-y-1/2">
+  {productCart.length}
+</p>
+</Link>
+
+        </div>
       </div>
 
       {/* Mobile Navigation (Dropdown) */}

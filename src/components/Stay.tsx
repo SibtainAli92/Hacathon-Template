@@ -2,7 +2,7 @@ export default function Header() {
     return (
    <div>
      {/* Seventh page start */}
-     <div className="bg-black text-white p-6 sm:p-8 lg:p-10  max-w-[1100px] flex flex-col items-center rounded-2xl -mb-7 mx-auto">
+     <div className="bg-black text-white p-6 sm:p-8 lg:p-10  max-w-[1100px] flex flex-col items-center rounded-2xl mb-5 mx-auto ">
         {/* Content Wrapper */}
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 md:space-x-6">
           {/* Heading */}

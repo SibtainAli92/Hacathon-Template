@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import ClothesCard from "@/components/Shart_Card_01";
 import { useState } from "react";
 
 export default function Product() {
@@ -270,9 +269,6 @@ export default function Product() {
                       ★
                     </span>
                   ))}
-                  {/* {Array.from({ length: 5 - review.rating }).map((_, i) => (
-                  <span key={i} className="text-gray-300">★</ span>
-                ))} */}
                 </div>
                 <div className="flex items-center  space-x-2">
                   <span className="text-lg font-semibold">{review.name}</span>
@@ -304,37 +300,6 @@ export default function Product() {
         <h1 className="text-3xl sm:text-4xl lg:text-6xl text-center font-extrabold mb-8">
           YOU MIGHT ALSO LIKE
         </h1>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mx-auto">
-          <ClothesCard
-            image="/blue.png"
-            name="Polo With Contrast Trims"
-            ratingImage="/4.0.png"
-            price="$212"
-            orignalPrice="$242"
-            discountCopen="-20%"
-          />
-          <ClothesCard
-            image="/pink.png"
-            name="Gradient Graphic T-Shirt"
-            ratingImage="/3.5.png"
-            price="$145"
-          />
-          <ClothesCard
-            image="/purple.png"
-            name="Polo With Tipping Details"
-            ratingImage="/45.5.png"
-            price="$180"
-          />
-          <ClothesCard
-            image="/white.png"
-            name="Black Striped T-Shirt"
-            ratingImage="/5.0.png"
-            price="$210"
-            orignalPrice="$150"
-            discountCopen="-30%"
-          />
-        </div>
 
         <button className="text-black w-40 sm:w-56 lg:w-[237px] h-12 sm:h-14 lg:h-[66px] rounded-full bg-white p-4 flex justify-center mx-auto border mt-8">
           View All

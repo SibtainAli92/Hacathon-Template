@@ -1,10 +1,94 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import ClothesCard from "@/components/Shart_Card_01";
 import { GoArrowLeft } from "react-icons/go";
 import { GoArrowRight } from "react-icons/go";
+import { client } from "@/sanity/lib/client";
+import {  useEffect, useState } from "react";
+import { endthreeproduct, startthreeproduct } from "@/sanity/lib/quries";
+import { urlFor } from "@/sanity/lib/image";
+import { addToCart } from "../../redux/cartSlice";
+import { useAppDispatch } from "../../hooks/redux";
 
 export default function Home() {
+  type Products = {
+    _id: string;
+    image: string;
+    name: string;
+    ratingImage: string;
+    price: number;
+    originalPrice: number;
+    discountCopen: string;
+  };
+
+
+  const [startproducts, setstartProducts] = useState<Products[]>([]);
+  const [endproducts, setendProducts] = useState<Products[]>([]);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      setLoading(true);
+      setError(null); // Reset error state before fetching
+      try {
+        const fetchedProducts = await client.fetch(startthreeproduct);
+        setstartProducts(fetchedProducts);
+      } catch  {
+        setError("Failed to fetch products. Please try again later.");
+      } finally {
+        setLoading(false); // Ensure loading is false regardless of success or error
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      setLoading(true);
+      setError(null); // Reset error state before fetching
+      try {
+        const fetchedProducts = await client.fetch(endthreeproduct);
+        setendProducts(fetchedProducts);
+      } catch  {
+        setError("Failed to fetch products. Please try again later.");
+      } finally {
+        setLoading(false); // Ensure loading is false regardless of success or error
+      }
+    };
+  
+    fetchProducts();
+  }, []);
+
+  // Display loading spinner
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen bg-gray-100">
+        <div className="text-center flex flex-col items-center p-4 bg-white shadow-lg rounded-md">
+          <div className="w-12 h-12 border-4 border-gray-300 border-t-black rounded-full animate-spin"></div>
+          <p className="mt-4 text-lg font-semibold text-gray-700">Loading products...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Display error message
+  if (error) {
+    return (
+      <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
+        <p className="text-xl font-semibold text-red-600">{error}</p>
+        <button
+          onClick={() => window.location.reload()}
+          className="mt-4 px-4 py-2 bg-red-500 text-white rounded-md"
+        >
+          Retry
+        </button>
+      </div>
+    );
+  }
+
   return (
     <div className="max-w-[1440px] mx-auto">
       {/* First page start */}
@@ -20,9 +104,9 @@ export default function Home() {
             style.
           </p>
           <Link href="/category">
-          <button className="text-white w-[160px] sm:w-[200px] lg:w-[237px] h-[45px] sm:h-[50px] lg:h-[66px] rounded-full bg-black p-3 lg:p-4">
-            Shop Now
-          </button>
+            <button className="text-white w-[160px] sm:w-[200px] lg:w-[237px] h-[45px] sm:h-[50px] lg:h-[66px] rounded-full bg-black p-3 lg:p-4">
+              Shop Now
+            </button>
           </Link>
         </div>
 
@@ -105,43 +189,57 @@ export default function Home() {
 
       {/* third page start */}
       {/* New Arrival Section */}
-      <div className="h-auto flex flex-col justify-center mt-10 px-4 md:px-8 ml-7" id="new-arrivals">
+      {/* New Arrival Section */}
+      <div
+        className="h-auto flex flex-col justify-center mt-10 px-4 md:px-8 ml-7"
+        id="new-arrivals"
+      >
         <h1 className="text-3xl sm:text-4xl lg:text-6xl text-center font-extrabold mb-8">
           NEW ARRIVAL
         </h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <ClothesCard
-            image="/black.png"
-            name="T-shirt with Tape Details"
-            ratingImage="/45.5.png"
-            price="$120"
-          />
-          <ClothesCard
-            image="/pent.png"
-            name="Skinny Fit Jeans"
-            ratingImage="/3.5.png"
-            price="$240"
-            orignalPrice="$260"
-            discountCopen="-20%"
-          />
-          <ClothesCard
-            image="/shirt.png"
-            name="Chequered Shirt"
-            ratingImage="/45.5.png"
-            price="$180"
-          />
-          <ClothesCard
-            image="/orange.png"
-            name="Sleeve Striped T-shirt"
-            ratingImage="/45.5.png"
-            price="$130"
-            orignalPrice="$160"
-            discountCopen="-30%"
-          />
+        <div className="flex flex-wrap justify-center gap-8">
+          {startproducts.map((element: Products) => (
+            <div key={element._id} className="group relative">
+                <div className="flex flex-col gap-4 relative">
+                  {/* Image Section */}
+                  <div className="relative w-[295px] h-[298px] mx-auto">
+              <Link href={`/category/${element._id}`}>
+                    <Image
+                      src={urlFor(element.image).url()}
+                      alt={"showimage"}
+                      width={200}
+                      height={200}
+                      className="rounded-2xl object-cover w-full h-full gap-2 transform transition-transform duration-300 hover:scale-110"
+                      />
+                      </Link>
+                    {/* Add to Cart Button */}
+                    <button
+                      onClick={() => {
+                        dispatch(addToCart(element));
+                      }}
+                      className="absolute mt-[240px] inset-0 w-[300px] h-[60px] rounded-lg bg-black bg-opacity-50 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+
+                  {/* Product Info */}
+                  <div className="text-center">
+                    <h4 className="font-bold">{element.name}</h4>
+                    <div className="flex justify-center gap-4 text-sm">
+                      <p className="font-bold">${element.price}</p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          ))}
         </div>
 
-        <button  className="text-black w-40 sm:w-56 lg:w-[237px] h-12 sm:h-14 lg:h-[66px] rounded-full bg-white p-4 flex justify-center mx-auto border mt-8">
+        <button
+    
+          className="text-black w-40 sm:w-56 lg:w-[237px] h-12 sm:h-14 lg:h-[66px] rounded-full bg-white p-4 flex justify-center mx-auto border mt-8"
+        >
           View All
         </button>
       </div>
@@ -152,38 +250,50 @@ export default function Home() {
 
       {/* fourth page start */}
       {/* Top Selling Section */}
-      <div className="h-auto flex flex-col justify-center px-4 md:px-8 ml-7" id="on-sale">
+      <div
+        className="h-auto flex flex-col justify-center px-4 md:px-8 ml-7"
+        id="on-sale"
+      >
         <h1 className="text-3xl sm:text-4xl lg:text-6xl text-center font-extrabold mb-8">
           TOP SELLING
         </h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <ClothesCard
-            image="/green.png"
-            name="Vertical Striped Shirt"
-            ratingImage="/5.0.png"
-            price="$212"
-            orignalPrice="$232"
-            discountCopen="-20%"
-          />
-          <ClothesCard
-            image="/orange (2).png"
-            name="Courage Graphic T-Shirt"
-            ratingImage="/4.0.png"
-            price="$145"
-          />
-          <ClothesCard
-            image="/short.png"
-            name="Loose Fit Bermuda Short"
-            ratingImage="/3.0.png"
-            price="$80"
-          />
-          <ClothesCard
-            image="/jeans.png"
-            name="Faded Skinny Jeans"
-            ratingImage="/45.5.png"
-            price="$210"
-          />
+        <div className="flex flex-wrap justify-center gap-8">
+          {endproducts.map((element: Products) => (
+            <div key={element._id} className="group relative">
+                <div className="flex flex-col gap-4 relative">
+                  {/* Image Section */}
+                  <div className="relative w-[295px] h-[298px] mx-auto">
+              <Link href={`/category/${element._id}`}>
+                    <Image
+                      src={urlFor(element.image).url()}
+                      alt={"showimage"}
+                      width={200}
+                      height={200}
+                      className="rounded-2xl object-cover w-full h-full gap-2 transform transition-transform duration-300 hover:scale-110"
+                    />
+              </Link>
+                    {/* Add to Cart Button */}
+                    <button
+                      onClick={() => {
+                        dispatch(addToCart(element));
+                      }}
+                      className="absolute mt-[240px] inset-0 w-[300px] h-[60px] rounded-lg bg-black bg-opacity-50 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+
+                  {/* Product Info */}
+                  <div className="text-center">
+                    <h4 className="font-bold">{element.name}</h4>
+                    <div className="flex justify-center gap-4 text-sm">
+                      <p className="font-bold">${element.price}</p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          ))}
         </div>
 
         <button className="text-black w-40 sm:w-56 lg:w-[237px] h-12 sm:h-14 lg:h-[66px] rounded-full bg-white p-4 flex justify-center mx-auto border mt-8">
@@ -194,46 +304,49 @@ export default function Home() {
       {/* fourth page end */}
 
       {/* fifth page start */}
-      <div className="space-y-7 py-20 w-full max-w-[1239px] h-auto bg-[#F0F0F0] mx-auto rounded-3xl px-4 sm:px-8" id="brand">
+      <div
+        className="space-y-7 py-20 w-full max-w-[1239px] h-auto bg-[#F0F0F0] mx-auto rounded-3xl px-4 sm:px-8"
+        id="brand"
+      >
         {/* Section Title */}
         <h1 className="flex justify-center font-extrabold text-2xl sm:text-3xl md:text-4xl mb-8 sm:mb-12 md:mb-16 text-center">
           BROWSE BY DRESS STYLE
         </h1>
 
-        <div className="flex flex-col gap-20 mx-auto">
+        <div className="flex flex-col gap-3 mx-auto">
           {/* First Row */}
-          <div className="grid lg:grid-cols-[400px_600px] grid-cols-1 h-72 gap-3 mx-auto">
+          <div className="grid lg:grid-cols-[400px_600px] grid-cols-1 gap-3 mx-auto">
             <Image
               src="/casual.png"
               alt="Casual"
               width={407}
               height={289}
-              className="w-full max-w-full h-auto rounded-lg"
+              className="w-full h-64 object-cover rounded-lg"
             />
             <Image
               src="/formal.png"
               alt="Formal"
               width={684}
               height={289}
-              className="w-full max-w-full h-auto rounded-lg"
+              className="w-full h-64 object-cover rounded-lg"
             />
           </div>
 
           {/* Second Row */}
-          <div className="grid lg:grid-cols-[600px_400px] grid-cols-1 h-72 gap-3 mx-auto">
+          <div className="grid lg:grid-cols-[600px_400px] grid-cols-1 gap-3 mx-auto">
             <Image
               src="/party.png"
               alt="Party"
               width={684}
               height={289}
-              className="w-full max-w-full h-auto rounded-lg"
+              className="w-full h-64 object-cover rounded-lg"
             />
             <Image
               src="/gym.png"
               alt="Gym"
               width={407}
               height={289}
-              className="w-full max-w-full h-auto rounded-lg"
+              className="w-full h-64 object-cover rounded-lg"
             />
           </div>
         </div>
