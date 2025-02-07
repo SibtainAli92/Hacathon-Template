@@ -174,7 +174,7 @@ export default function Checkout() {
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all"
                   />
                   {formErrors.firstName && (
-                    <p className="text-sm text-red-500 mt-1">
+                    <p className="text-sm text-red-400 mt-1">
                       First name is required.
                     </p>
                   )}
@@ -196,7 +196,7 @@ export default function Checkout() {
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all"
                   />
                   {formErrors.lastName && (
-                    <p className="text-sm text-red-500 mt-1">
+                    <p className="text-sm text-red-400 mt-1">
                       Last name is required.
                     </p>
                   )}
@@ -219,7 +219,7 @@ export default function Checkout() {
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all"
                 />
                 {formErrors.address && (
-                  <p className="text-sm text-red-500 mt-1">
+                  <p className="text-sm text-red-400 mt-1">
                     Address is required.
                   </p>
                 )}
@@ -241,7 +241,7 @@ export default function Checkout() {
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all"
                 />
                 {formErrors.city && (
-                  <p className="text-sm text-red-500 mt-1">City is required.</p>
+                  <p className="text-sm text-red-400 mt-1">City is required.</p>
                 )}
               </div>
 
@@ -261,7 +261,7 @@ export default function Checkout() {
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all"
                 />
                 {formErrors.zipCode && (
-                  <p className="text-sm text-red-500 mt-1">
+                  <p className="text-sm text-red-400 mt-1">
                     Zip Code is required.
                   </p>
                 )}
@@ -283,7 +283,7 @@ export default function Checkout() {
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all"
                 />
                 {formErrors.phone && (
-                  <p className="text-sm text-red-500 mt-1">Phone is required.</p>
+                  <p className="text-sm text-red-400 mt-1">Phone is required.</p>
                 )}
               </div>
 
@@ -303,7 +303,7 @@ export default function Checkout() {
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all"
                 />
                 {formErrors.email && (
-                  <p className="text-sm text-red-500 mt-1">Email is required.</p>
+                  <p className="text-sm text-red-400 mt-1">Email is required.</p>
                 )}
               </div>
 
