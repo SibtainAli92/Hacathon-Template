@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Header from "@/components/Header";
+// import Header from "@/components/Header";
 import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar";
 import Stay from "@/components/Stay"
@@ -35,7 +35,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ReduxProvider>
-        <Header />
+        {/* <Header /> */}
         <Navbar />
         {children}
         <Stay />
