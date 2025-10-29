@@ -112,7 +112,7 @@ export default function Home() {
 
         <div className="relative">
           <Image
-            src="/rectangle.png"
+            src="/rectangle_2.png"
             alt="back-ground"
             width={500}
             height={500}
